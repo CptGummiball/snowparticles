@@ -38,8 +38,15 @@ public class ParticleTask {
                         if (distance <= radius && playerLoc.getY() >= lowest && playerLoc.getY() <= highest) {
                             // Überprüfen, ob Blöcke über dem Spieler sind
                             if (!isCovered(player)) {
-                                // Schneepartikel anzeigen
-                                player.spawnParticle(org.bukkit.Particle.SNOWFLAKE, playerLoc, 10, 0.5, 0.5, 0.5, 0.1);
+                                // Schneepartikel in einem Bereich um den Spieler spawnen
+                                for (int i = 0; i < 20; i++) { // Mehrere Partikel erzeugen
+                                    double offsetX = (Math.random() * 2 - 1) * 3; // Zufällige X-Position (-3 bis 3)
+                                    double offsetZ = (Math.random() * 2 - 1) * 3; // Zufällige Z-Position (-3 bis 3)
+                                    double offsetY = Math.random() * 3 + 2; // Zufällige Y-Position (2 bis 5 über dem Spieler)
+
+                                    Location particleLocation = playerLoc.clone().add(offsetX, offsetY, offsetZ);
+                                    player.spawnParticle(org.bukkit.Particle.SNOWFLAKE, particleLocation, 1, 0, 0, 0, 0);
+                                }
                             }
                         }
                     }

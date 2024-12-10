@@ -1,5 +1,5 @@
 name: Snowparticles
-version: '1.01'
+version: '1.0c'
 main: org.cptgummiball.snowparticles.SnowParticles
 api-version: '1.21'
 prefix: SnowParticles

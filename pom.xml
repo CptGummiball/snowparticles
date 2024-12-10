@@ -6,7 +6,7 @@
 
     <groupId>org.cptgummiball</groupId>
     <artifactId>Snowparticles</artifactId>
-    <version>1.01</version>
+    <version>1.0c</version>
     <packaging>jar</packaging>
 
     <name>Snowparticles</name>
