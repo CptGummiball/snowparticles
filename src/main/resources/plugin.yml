@@ -1,0 +1,15 @@
+name: Snowparticles
+version: '1.0'
+main: org.cptgummiball.snowparticles.SnowParticles
+api-version: '1.21'
+prefix: SnowParticles
+authors: [ cptgummiball ]
+commands:
+  snowparticle setpoint:
+    description: Setze Schneepartikelpunkte
+    usage: /snowparticle setpoint <radius> <lowestpoint> <highestpoint>
+    permission: snowparticles.admin
+  snowparticle removepoint:
+    description: Entferne Schneepartikelpunkte
+    usage: /snowparticle removepoint <name>
+    permission: snowparticles.admin
