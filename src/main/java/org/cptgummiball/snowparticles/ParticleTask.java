@@ -40,8 +40,8 @@ public class ParticleTask {
                             if (!isCovered(player)) {
                                 // Schneepartikel in einem Bereich um den Spieler spawnen
                                 for (int i = 0; i < 20; i++) { // Mehrere Partikel erzeugen
-                                    double offsetX = (Math.random() * 2 - 1) * 3; // Zufällige X-Position (-3 bis 3)
-                                    double offsetZ = (Math.random() * 2 - 1) * 3; // Zufällige Z-Position (-3 bis 3)
+                                    double offsetX = (Math.random() * 2 - 1) * 5; // Zufällige X-Position (-5 bis 5)
+                                    double offsetZ = (Math.random() * 2 - 1) * 5; // Zufällige Z-Position (-5 bis 5)
                                     double offsetY = Math.random() * 3 + 2; // Zufällige Y-Position (2 bis 5 über dem Spieler)
 
                                     Location particleLocation = playerLoc.clone().add(offsetX, offsetY, offsetZ);
@@ -52,7 +52,7 @@ public class ParticleTask {
                     }
                 }
             }
-        }.runTaskTimer(plugin, 0L, 20L);
+        }.runTaskTimer(plugin, 0L, 5L);
     }
 
     private boolean isCovered(Player player) {
@@ -60,7 +60,7 @@ public class ParticleTask {
         Set<Material> ignoredBlocks = plugin.getIgnoredBlocks();
 
         // Überprüfen, ob Blöcke 1–4 über dem Spieler existieren und relevant sind
-        for (int y = 1; y <= 4; y++) {
+        for (int y = 1; y <= 200; y++) {
             Location checkLoc = loc.clone().add(0, y, 0);
             Material blockType = checkLoc.getBlock().getType();
 
